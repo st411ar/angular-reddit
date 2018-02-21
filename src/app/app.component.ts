@@ -20,6 +20,10 @@ export class AppComponent {
 
   addArticle(title: HTMLInputElement, link: HTMLInputElement): boolean {
     console.log(`Adding article title: ${title.value} and link: ${link.value}`);
+    const newArticle: Article = new Article(title.value, link.value);
+    this.articles.push(newArticle);
+    title.value = '';
+    link.value = '';
     return false;
   }
 }
